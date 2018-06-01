@@ -1,12 +1,12 @@
 import socket
 
-mi_sokect = socket.socket()
-mi_sokect.connect(('localhost',8000))
+mi_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+dir_server = '192.168.1.101'
+port_server = 8000
+mensaje = "Nigga, aint a server but a Client Dude"
+mi_socket.sendto(mensaje.encode("utf8"),
+                 (dir_server, port_server))
 
+#respuesta = mi_sokect.recv(1024).decode()
 
-mi_sokect.send(("Nigga, aint a server but a Client Dude").encode())
-respuesta = mi_sokect.recv(1024).decode()
-
-print(respuesta)
-
-mi_sokect.close()
+#print(respuesta)
