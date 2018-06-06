@@ -25,24 +25,19 @@ IO.setup(dir_2 , IO.OUT)
 
 
 
-mi_sokect = socket.socket( socket.AF_INET, socket.SOCK_DGRAM)
-mi_sokect.bind(('192.168.1.100', 8000))
-#mi_ sokect.listen(5)
-
-
 def main():
     print("Iniciando servidor")
 
     print("Preparando Carro")
     set_up()
+    IO.output(pin_1,True)
+    IO.output(pin_2,False)
+    IO.output(pin_3,True)
+    IO.output(pin_4,False)
     print("Done..")
 
     while True:
-        IO.output(pin_1,True)
-        IO.output(pin_2,False)
-        IO.output(pin_3,True)
-        IO.output(pin_4,False)
-
+        print("Dude")
 
 def set_up():
     #Pines salida
